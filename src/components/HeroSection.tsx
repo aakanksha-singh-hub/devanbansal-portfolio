@@ -30,11 +30,18 @@ const HeroSection = () => {
   }, []);
 
   const scrollToAbout = () => {
-    document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+    console.log('Scroll to About clicked');
+    const aboutElement = document.getElementById('about');
+    console.log('About element found:', aboutElement);
+    if (aboutElement) {
+      aboutElement.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      console.error('About element not found');
+    }
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 via-white to-gray-100 relative overflow-hidden pt-16 lg:pt-20">
+    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 via-white to-gray-100 relative overflow-hidden pt-24 lg:pt-32">
       {/* Clean Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Subtle Gradient Orbs */}
@@ -44,7 +51,7 @@ const HeroSection = () => {
         {/* Professional Financial Charts - Clean and Minimal */}
         
         {/* Top Left - Clean Bar Chart */}
-        <div className="absolute top-20 left-20 hidden lg:block animate-fade-in-up" style={{animationDelay: '1s'}}>
+        <div className="absolute top-32 left-20 hidden lg:block animate-fade-in-up" style={{animationDelay: '1s'}}>
           <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-gray-200/50">
             <svg className="w-24 h-16 text-orange-400" viewBox="0 0 96 64">
               <rect x="8" y="35" width="8" height="20" fill="currentColor" opacity="0.6" className="animate-pulse" style={{animationDelay: '0s'}} />
@@ -59,7 +66,7 @@ const HeroSection = () => {
         </div>
 
         {/* Top Right - Skills Indicator */}
-        <div className="absolute top-20 right-20 hidden lg:block animate-slide-in-right" style={{animationDelay: '1.5s'}}>
+        <div className="absolute top-32 right-20 hidden lg:block animate-slide-in-right" style={{animationDelay: '1.5s'}}>
           <div className="bg-white/90 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-gray-200/50">
             <div className="flex items-center space-x-3">
               <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
@@ -136,7 +143,7 @@ const HeroSection = () => {
             {/* Primary CTA */}
             <a 
               href="/Devan Bansal CV.pdf" 
-              download="Devan_Bansal_Resume.pdf"
+              download="Devan_Bansal_CV.pdf"
               className="inline-flex items-center justify-center cta-button text-white px-10 md:px-12 py-4 md:py-5 text-lg md:text-xl font-semibold group relative shadow-lg hover:shadow-xl transition-all duration-300 rounded-md"
               aria-label="Download resume PDF"
             >
@@ -146,15 +153,14 @@ const HeroSection = () => {
             </a>
             
             {/* Secondary Action */}
-            <Button 
+            <button 
               onClick={scrollToAbout}
-              variant="outline"
-              className="!border-2 !border-navy-800 text-navy-800 hover:bg-navy-800 hover:text-white px-8 md:px-10 py-3 md:py-4 text-base md:text-lg font-semibold group transition-all duration-300 bg-white/80 backdrop-blur-sm shadow-lg hover:shadow-xl"
+              className="border border-orange-200 text-navy-700 px-8 md:px-10 py-3 md:py-4 text-base md:text-lg font-bold bg-gradient-to-r from-orange-50/80 via-orange-100/60 to-orange-50/80 backdrop-blur-sm shadow-lg relative z-30 rounded-full inline-flex items-center justify-center hover:font-extrabold hover:from-orange-100/90 hover:via-orange-200/70 hover:to-orange-100/90 hover:border-orange-300 transition-all duration-300"
               aria-label="Scroll to about section"
             >
               Explore My Journey
-              <ChevronDown className="ml-2 h-4 w-4 md:h-5 md:w-5 group-hover:translate-y-1 transition-transform duration-300" />
-            </Button>
+              <ChevronDown className="ml-2 h-4 w-4 md:h-5 md:w-5" />
+            </button>
           </div>
         </div>
       </div>
