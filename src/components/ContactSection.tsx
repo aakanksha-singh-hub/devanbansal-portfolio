@@ -6,10 +6,13 @@ import { Mail, Phone, Linkedin } from 'lucide-react';
 const ContactSection = () => {
   return (
     <section id="contact" className="section-padding bg-gradient-to-br from-navy-800 via-navy-700 to-navy-600 text-white relative overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 right-20 w-48 h-48 md:w-64 md:h-64 bg-orange-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
-        <div className="absolute bottom-20 left-20 w-60 h-60 md:w-80 md:h-80 bg-orange-400 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-pulse"></div>
+      {/* ✨ Very Subtle Animated Glow Capsules for Contact Section */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Left Glow Capsule - Extremely Soft */}
+        <div className="absolute top-20 left-20 w-[300px] h-[80px] bg-gradient-to-r from-orange-200 to-amber-200 opacity-5 blur-[90px] rounded-full rotate-[25deg] animate-pulse" style={{ animationDuration: '8s' }}></div>
+
+        {/* Right Glow Capsule - Extremely Soft */}
+        <div className="absolute bottom-20 right-20 w-[250px] h-[60px] bg-gradient-to-l from-orange-100 to-yellow-100 opacity-5 blur-[80px] rounded-full rotate-[-15deg] animate-pulse" style={{ animationDuration: '10s', animationDelay: '3s' }}></div>
       </div>
       
       <div className="container-custom relative z-10">

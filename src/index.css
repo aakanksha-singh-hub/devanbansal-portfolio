@@ -44,6 +44,10 @@
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground font-inter;
     background-color: rgb(var(--bg-primary));

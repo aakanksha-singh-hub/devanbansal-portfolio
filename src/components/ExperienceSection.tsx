@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Briefcase, Users, DollarSign, Calendar } from 'lucide-react';
+import { Briefcase, Users, DollarSign, Calendar, TrendingUp, BarChart3, PieChart, Building } from 'lucide-react';
 
 const ExperienceSection = () => {
   const experiences = [
@@ -30,7 +30,7 @@ const ExperienceSection = () => {
       icon: Briefcase,
       achievements: [
         "Represented college at NDTV Profit & ASSOCHAM MSME Conclave 2025",
-        "Coordinated placement activities for 200+ students",
+        "Coordinated placement activities for numerous students",
         "Built relationships with 15+ corporate partners",
         "Organized industry interaction sessions and workshops"
       ],
@@ -53,13 +53,42 @@ const ExperienceSection = () => {
   ];
 
   return (
-    <section id="experience" className="section-padding bg-white">
-      <div className="container-custom">
+    <section id="experience" className="section-padding bg-white relative overflow-hidden">
+      {/* ✨ Unified Animated Gradient Capsules - EXTREMELY SUBTLE VERSION */}
+      <div className="absolute inset-0 z-10 overflow-hidden pointer-events-none">
+        {/* Left Glow Capsule - EXTREMELY SUBTLE */}
+        <div className="absolute -top-32 -left-48 w-[700px] h-[200px] bg-gradient-to-r from-orange-200 via-amber-200 to-orange-300 opacity-5 blur-[100px] rounded-full rotate-[20deg] animate-pulse" style={{ animationDuration: '8s' }}></div>
+
+        {/* Right Glow Capsule - EXTREMELY SUBTLE */}
+        <div className="absolute top-[20%] -right-48 w-[600px] h-[180px] bg-gradient-to-l from-orange-100 via-yellow-200 to-orange-200 opacity-5 blur-[110px] rounded-full rotate-[-30deg] animate-pulse" style={{ animationDuration: '10s', animationDelay: '3s' }}></div>
+
+        {/* Bottom Center Glow Capsule - EXTREMELY SUBTLE */}
+        <div className="absolute bottom-[-80px] left-1/2 transform -translate-x-1/2 w-[500px] h-[150px] bg-gradient-to-r from-amber-200 via-orange-200 to-yellow-200 opacity-5 blur-[95px] rounded-full rotate-[10deg] animate-pulse" style={{ animationDuration: '12s', animationDelay: '1.5s' }}></div>
+      </div>
+
+      {/* Finance-themed floating icons */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Top Right - Performance Metrics */}
+        <div className="absolute top-32 right-20 hidden lg:block animate-slide-in-right" style={{animationDelay: '1.5s'}}>
+          <div className="bg-white/90 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-gray-200/50">
+            <TrendingUp className="w-8 h-8 text-green-500 animate-bounce" style={{animationDuration: '3s'}} />
+          </div>
+        </div>
+
+        {/* Bottom Left - Team Leadership */}
+        <div className="absolute bottom-32 left-20 hidden lg:block animate-fade-in-up" style={{animationDelay: '2s'}}>
+          <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-gray-200/50">
+            <Users className="w-8 h-8 text-blue-500" />
+          </div>
+        </div>
+      </div>
+      
+      <div className="container-custom relative z-20">
         <div className="text-center mb-8 md:mb-12 animate-fade-in-up">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-navy-900 mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-navy-900 mb-4 hover:scale-105 transition-transform duration-500">
             My <span className="gradient-text">Experience</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-navy-600 to-orange-500 mx-auto mb-6"></div>
+          <div className="w-20 h-1 bg-gradient-to-r from-navy-600 to-orange-500 mx-auto mb-6 hover:w-32 transition-all duration-500"></div>
           <p className="text-base md:text-lg text-navy-600 max-w-2xl mx-auto">
             Building leadership skills through meaningful roles and impactful contributions
           </p>

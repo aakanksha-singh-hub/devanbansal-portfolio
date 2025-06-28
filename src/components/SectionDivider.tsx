@@ -46,14 +46,6 @@ const SectionDivider = () => {
           <div className="w-2 h-2 rounded-full bg-orange-400 animate-pulse" style={{animationDelay: '0.6s'}}></div>
         </div>
       </div>
-      
-      {/* Floating particles */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-4 left-1/4 w-1 h-1 rounded-full bg-orange-300 opacity-60 animate-float"></div>
-        <div className="absolute top-8 right-1/3 w-1.5 h-1.5 rounded-full bg-navy-300 opacity-50 animate-float" style={{animationDelay: '1s'}}></div>
-        <div className="absolute bottom-6 left-1/3 w-1 h-1 rounded-full bg-orange-400 opacity-70 animate-float" style={{animationDelay: '2s'}}></div>
-        <div className="absolute bottom-4 right-1/4 w-1.5 h-1.5 rounded-full bg-navy-400 opacity-60 animate-float" style={{animationDelay: '0.5s'}}></div>
-      </div>
     </div>
   );
 };

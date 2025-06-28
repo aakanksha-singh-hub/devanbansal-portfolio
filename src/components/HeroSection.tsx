@@ -1,34 +1,9 @@
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ChevronDown, Download, TrendingUp, BarChart3, PieChart, DollarSign } from 'lucide-react';
 
 const HeroSection = () => {
-  const [animatedNumber, setAnimatedNumber] = useState(0);
-  const [stockPrice, setStockPrice] = useState(3.76);
-  
-  useEffect(() => {
-    // Animate the excellence score
-    const interval = setInterval(() => {
-      setAnimatedNumber(prev => {
-        if (prev < 3.76) {
-          return Math.min(prev + 0.02, 3.76);
-        }
-        return 3.76;
-      });
-    }, 50);
-
-    // Animate stock price
-    const stockInterval = setInterval(() => {
-      setStockPrice(prev => 3.76 + (Math.random() - 0.5) * 0.1);
-    }, 2000);
-
-    return () => {
-      clearInterval(interval);
-      clearInterval(stockInterval);
-    };
-  }, []);
-
   const scrollToAbout = () => {
     console.log('Scroll to About clicked');
     const aboutElement = document.getElementById('about');
@@ -43,16 +18,16 @@ const HeroSection = () => {
   return (
     <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 via-white to-gray-100 relative overflow-hidden pt-24 lg:pt-32">
       {/* SUPER VISIBLE Animated Background Blobs */}
-      {/* ✨ Stylish Animated Glow Capsules for Finance Portfolio - VISIBLE VERSION */}
+      {/* ✨ Stylish Animated Glow Capsules for Finance Portfolio - VERY SUBTLE VERSION */}
       <div className="absolute inset-0 z-10 overflow-hidden pointer-events-none">
-        {/* Left Glow Capsule - BRIGHT */}
-        <div className="absolute -top-32 -left-48 w-[700px] h-[200px] bg-gradient-to-r from-orange-400 via-amber-500 to-orange-600 opacity-60 blur-[60px] rounded-full rotate-[20deg] animate-pulse"></div>
+        {/* Left Glow Capsule - EXTREMELY SUBTLE */}
+        <div className="absolute -top-32 -left-48 w-[700px] h-[200px] bg-gradient-to-r from-orange-200 via-amber-200 to-orange-300 opacity-5 blur-[100px] rounded-full rotate-[20deg] animate-pulse" style={{ animationDuration: '8s' }}></div>
 
-        {/* Right Glow Capsule - GENTLE PULSE */}
-        <div className="absolute top-[20%] -right-48 w-[600px] h-[180px] bg-gradient-to-l from-orange-300 via-yellow-400 to-orange-500 opacity-50 blur-[50px] rounded-full rotate-[-30deg] animate-pulse" style={{ animationDuration: '3s', animationDelay: '1.5s' }}></div>
+        {/* Right Glow Capsule - EXTREMELY SUBTLE */}
+        <div className="absolute top-[20%] -right-48 w-[600px] h-[180px] bg-gradient-to-l from-orange-100 via-yellow-200 to-orange-200 opacity-5 blur-[110px] rounded-full rotate-[-30deg] animate-pulse" style={{ animationDuration: '10s', animationDelay: '3s' }}></div>
 
-        {/* Bottom Center Glow Capsule - BRIGHT */}
-        <div className="absolute bottom-[-80px] left-1/2 transform -translate-x-1/2 w-[500px] h-[150px] bg-gradient-to-r from-amber-400 via-orange-500 to-yellow-400 opacity-55 blur-[55px] rounded-full rotate-[10deg] animate-pulse"></div>
+        {/* Bottom Center Glow Capsule - EXTREMELY SUBTLE */}
+        <div className="absolute bottom-[-80px] left-1/2 transform -translate-x-1/2 w-[500px] h-[150px] bg-gradient-to-r from-amber-200 via-orange-200 to-yellow-200 opacity-5 blur-[95px] rounded-full rotate-[10deg] animate-pulse" style={{ animationDuration: '12s', animationDelay: '1.5s' }}></div>
       </div>
       
       <div className="absolute inset-0 overflow-hidden">
@@ -73,21 +48,8 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* Top Right - Skills Indicator */}
-        <div className="absolute top-32 right-20 hidden lg:block animate-slide-in-right" style={{animationDelay: '1.5s'}}>
-          <div className="bg-white/90 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-gray-200/50">
-            <div className="flex items-center space-x-3">
-              <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-              <div>
-                <div className="text-xs text-gray-600 font-medium">Excellence</div>
-                <div className="text-lg font-bold text-navy-900">{animatedNumber.toFixed(2)}</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Bottom Left - Clean Line Chart */}
-        <div className="absolute bottom-32 left-20 hidden lg:block animate-fade-in-up" style={{animationDelay: '2s'}}>
+        {/* Bottom Right - Clean Line Chart */}
+        <div className="absolute bottom-32 right-20 hidden lg:block animate-fade-in-up" style={{animationDelay: '2s'}}>
           <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-gray-200/50">
             <svg className="w-32 h-16 text-navy-400" viewBox="0 0 128 64">
               <defs>
