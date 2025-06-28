@@ -52,7 +52,7 @@ const AboutSection = () => {
             <div className="prose prose-lg text-navy-600 mb-6 md:mb-10">
               <p className="text-lg md:text-xl lg:text-2xl leading-relaxed mb-4 md:mb-6 hover:text-navy-700 transition-colors duration-300">
                 I'm a 2nd-year Accounting and Finance student at NMIMS Mumbai with a CGPA of 
-                <span className="font-bold text-orange-500 hover:text-orange-600 transition-colors duration-300">excellent academic standing</span>, on track for 
+                <span className="font-bold text-orange-500 hover:text-orange-600 transition-colors duration-300"> 3.76/4.00</span>, on track for 
                 <span className="font-bold text-navy-800 hover:text-navy-900 transition-colors duration-300"> ACCA and CFA certifications</span>.
               </p>
               <p className="text-base md:text-lg lg:text-xl leading-relaxed hover:text-navy-700 transition-colors duration-300">
