@@ -42,12 +42,20 @@ const HeroSection = () => {
 
   return (
     <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 via-white to-gray-100 relative overflow-hidden pt-24 lg:pt-32">
-      {/* Clean Background Elements */}
+      {/* SUPER VISIBLE Animated Background Blobs */}
+      {/* ✨ Stylish Animated Glow Capsules for Finance Portfolio - VISIBLE VERSION */}
+      <div className="absolute inset-0 z-10 overflow-hidden pointer-events-none">
+        {/* Left Glow Capsule - BRIGHT */}
+        <div className="absolute -top-32 -left-48 w-[700px] h-[200px] bg-gradient-to-r from-orange-400 via-amber-500 to-orange-600 opacity-60 blur-[60px] rounded-full rotate-[20deg] animate-pulse"></div>
+
+        {/* Right Glow Capsule - GENTLE PULSE */}
+        <div className="absolute top-[20%] -right-48 w-[600px] h-[180px] bg-gradient-to-l from-orange-300 via-yellow-400 to-orange-500 opacity-50 blur-[50px] rounded-full rotate-[-30deg] animate-pulse" style={{ animationDuration: '3s', animationDelay: '1.5s' }}></div>
+
+        {/* Bottom Center Glow Capsule - BRIGHT */}
+        <div className="absolute bottom-[-80px] left-1/2 transform -translate-x-1/2 w-[500px] h-[150px] bg-gradient-to-r from-amber-400 via-orange-500 to-yellow-400 opacity-55 blur-[55px] rounded-full rotate-[10deg] animate-pulse"></div>
+      </div>
+      
       <div className="absolute inset-0 overflow-hidden">
-        {/* Subtle Gradient Orbs */}
-        <div className="absolute -top-40 -right-40 w-80 h-80 md:w-96 md:h-96 bg-orange-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-float"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 md:w-96 md:h-96 bg-navy-100 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float" style={{ animationDelay: '2s' }}></div>
-        
         {/* Professional Financial Charts - Clean and Minimal */}
         
         {/* Top Left - Clean Bar Chart */}
