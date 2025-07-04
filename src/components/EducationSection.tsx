@@ -23,13 +23,12 @@ const EducationSection = () => {
       grade: "3.76 CGPA",
       status: "Final Year",
       specialization: "Accounting & Finance",
-      location: "Mumbai, Maharashtra",
-      logo: "N",
+      location: "Mumbai, India",
+      logo: "/nmims.png",
       achievements: [
         "Student Placement Coordinator",
         "Corporate Relations Cell Member",
         "Vaayu Fest Senior Member",
-        "Academic Excellence in Finance",
       ],
       subjects: [
         "Financial Management",
@@ -45,13 +44,12 @@ const EducationSection = () => {
       period: "2023 - Present",
       status: "In Progress",
       progress: "Strategic Level",
-      location: "Professional Qualification",
-      logo: "A",
+      // location: "Remote",
+      logo: "/acca-logo.png",
       achievements: [
-        "Cleared 9 Papers",
-        "Strategic Business Leader (SBL) Qualified",
+        "Partially Qualified - 8 out of 13 papers completed",
+        "Secured exemptions based on academic excellence in core commerce and finance subjects",
         "Advanced Financial Management Focus",
-        "Global Recognition",
       ],
       subjects: [
         " Financial Reporting",
@@ -66,7 +64,7 @@ const EducationSection = () => {
       grade: "93.80% Class 12\n96.20% Class 10",
       status: "Completed",
       location: "Navi Mumbai, India",
-      logo: "B",
+      logo: "/bbps-logo.png",
       specialization: "Commerce Stream",
       achievements: [
         "Zonal Rank 2 in Maharashtra and Goa - SOF Commerce Olympiad (June 2022)",
@@ -119,10 +117,20 @@ const EducationSection = () => {
               >
                 <div className="relative pl-16">
                   {/* Circle on timeline */}
-                  <div className="absolute left-0 top-0 mt-1 w-10 h-10 rounded-full border border-teal/30 flex items-center justify-center bg-black">
-                    <span className="text-teal text-sm font-geist-mono">
-                      {edu.logo}
-                    </span>
+                  <div className="absolute left-0 top-0 mt-1">
+                    {edu.logo ? (
+                      <img
+                        src={edu.logo}
+                        alt={`${edu.institution} logo`}
+                        className="w-10 h-10 object-cover rounded-full border border-teal/20"
+                      />
+                    ) : (
+                      <div className="w-10 h-10 rounded-full border border-teal/30 flex items-center justify-center bg-black">
+                        <span className="text-teal text-sm font-geist-mono">
+                          {edu.institution[0]}
+                        </span>
+                      </div>
+                    )}
                   </div>
 
                   {/* Accordion Header Section */}

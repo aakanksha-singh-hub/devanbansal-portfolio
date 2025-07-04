@@ -34,23 +34,6 @@ const ProjectsSection = () => {
         "Price adjustment calculations",
       ],
     },
-    {
-      title: "Corporate Finance Case Study",
-      description:
-        "Comprehensive case study analyzing merger and acquisition scenarios, including valuation methods, synergy analysis, and financial modeling for strategic decision making.",
-      skills: [
-        "M&A Analysis",
-        "DCF Modeling",
-        "Valuation",
-        "Strategic Finance",
-      ],
-      icon: BarChart3,
-      highlights: [
-        "Multiple valuation approaches",
-        "Synergy quantification",
-        "Risk-adjusted returns",
-      ],
-    },
   ];
 
   return (
@@ -75,7 +58,7 @@ const ProjectsSection = () => {
         </div>
 
         {/* Bento Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
           {projects.map((project, index) => {
             const IconComponent = project.icon;
             return (
