@@ -34,18 +34,21 @@ const SkillsSection = () => {
       status: "In Progress",
       provider: "Association of Chartered Certified Accountants",
       level: "Professional",
+      logo: "/acca-logo.png",
     },
     {
-      name: "NISM",
+      name: "NISM Series XV - Research Analyst",
       status: "Certified",
       provider: "National Institute of Securities Markets",
       level: "Professional",
+      logo: "/nism-logo.jpeg",
     },
     {
       name: "CA Foundation",
       status: "Completed",
       provider: "Institute of Chartered Accountants of India",
       level: "Foundation",
+      logo: "/ca-logo.png",
     },
   ];
 
@@ -167,10 +170,20 @@ const SkillsSection = () => {
               {certifications.map((cert, index) => (
                 <div key={index} className="relative pl-16">
                   {/* Circle on timeline */}
-                  <div className="absolute left-0 top-0 mt-1 w-10 h-10 rounded-full border border-teal/30 flex items-center justify-center bg-black">
-                    <span className="text-teal text-sm font-geist-mono">
-                      {cert.name.charAt(0)}
-                    </span>
+                  <div className="absolute left-0 top-0 mt-1">
+                    {cert.logo ? (
+                      <img
+                        src={cert.logo}
+                        alt={`${cert.name} logo`}
+                        className="w-10 h-10 object-cover rounded-full border border-teal/20"
+                      />
+                    ) : (
+                      <div className="w-10 h-10 rounded-full border border-teal/30 flex items-center justify-center bg-black">
+                        <span className="text-teal text-sm font-geist-mono">
+                          {cert.name.charAt(0)}
+                        </span>
+                      </div>
+                    )}
                   </div>
 
                   {/* Year badge */}
@@ -236,8 +249,7 @@ const SkillsSection = () => {
                   Currently Pursuing
                 </h4>
                 <p className="text-sm text-gray-400 leading-relaxed">
-                  Working towards CFA Level 1 certification and advancing in
-                  ACCA qualification pathway.
+                  Advancing in the ACCA qualification pathway.
                 </p>
               </div>
             </div>
