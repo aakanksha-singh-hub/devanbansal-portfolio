@@ -31,22 +31,25 @@ const Navigation = () => {
 
   return (
     <nav
-      className={`fixed top-6 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-500 w-[95%] sm:w-[90%] md:w-fit max-w-6xl ${
+      className={`fixed top-2 sm:top-6 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-500 w-[95%] sm:w-[90%] md:w-fit max-w-6xl ${
         scrolled
           ? "bg-black/90 backdrop-blur-xl border border-teal/20"
           : "bg-black/80 backdrop-blur-lg border border-teal/10"
-      } rounded-2xl shadow-2xl shadow-teal/20`}
+      } rounded-lg sm:rounded-2xl shadow-2xl shadow-teal/20`}
     >
       <div className="px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between py-3 sm:justify-center sm:py-4 sm:gap-6">
           {/* Logo */}
           <div className="flex items-center">
-            <img
-              src="/db-removebg-preview.png"
-              alt="DB Logo"
-              className="h-8 object-contain filter brightness-0 invert cursor-pointer"
+            <div
+              className="flex items-baseline cursor-pointer"
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            />
+            >
+              <span className="font-geist-mono text-xl text-white">Devan</span>
+              <span className="font-playfair italic text-xl text-white ml-0.5">
+                Bansal
+              </span>
+            </div>
           </div>
 
           {/* Desktop Navigation */}
