@@ -1,8 +1,22 @@
-
-import React from 'react';
-import { Card, CardContent } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Monitor, BarChart3, Calculator, Presentation, FileSpreadsheet, TrendingUp, DollarSign, PieChart } from 'lucide-react';
+import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import {
+  Monitor,
+  BarChart3,
+  Calculator,
+  Presentation,
+  FileSpreadsheet,
+  TrendingUp,
+  ChevronDown,
+  Award,
+} from "lucide-react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const SkillsSection = () => {
   const technicalSkills = [
@@ -11,7 +25,7 @@ const SkillsSection = () => {
     { name: "Financial Modeling", icon: Calculator, category: "Finance" },
     { name: "Data Analysis", icon: TrendingUp, category: "Analysis" },
     { name: "PowerPoint", icon: Presentation, category: "Presentation" },
-    { name: "CAPM & Valuation", icon: Monitor, category: "Finance" }
+    { name: "CAPM & Valuation", icon: Monitor, category: "Finance" },
   ];
 
   const certifications = [
@@ -19,163 +33,214 @@ const SkillsSection = () => {
       name: "ACCA",
       status: "In Progress",
       provider: "Association of Chartered Certified Accountants",
-      level: "Professional"
+      level: "Professional",
     },
     {
       name: "NISM",
       status: "Certified",
       provider: "National Institute of Securities Markets",
-      level: "Professional"
+      level: "Professional",
     },
     {
       name: "CA Foundation",
       status: "Completed",
       provider: "Institute of Chartered Accountants of India",
-      level: "Foundation"
-    }
+      level: "Foundation",
+    },
   ];
 
   const softSkills = [
-    "Leadership", "Team Management", "Communication", "Problem Solving",
-    "Critical Thinking", "Project Management", "Public Speaking", "Analytical Thinking"
+    "Leadership",
+    "Team Management",
+    "Communication",
+    "Problem Solving",
+    "Critical Thinking",
+    "Project Management",
+    "Public Speaking",
+    "Analytical Thinking",
   ];
 
   return (
-    <section id="skills" className="section-padding bg-gray-50 relative overflow-hidden">
-      {/* ✨ Unified Animated Gradient Capsules - EXTREMELY SUBTLE VERSION */}
-      <div className="absolute inset-0 z-10 overflow-hidden pointer-events-none">
-        {/* Left Glow Capsule - EXTREMELY SUBTLE */}
-        <div className="absolute -top-32 -left-48 w-[700px] h-[200px] bg-gradient-to-r from-orange-200 via-amber-200 to-orange-300 opacity-5 blur-[100px] rounded-full rotate-[20deg] animate-pulse" style={{ animationDuration: '8s' }}></div>
+    <section
+      id="skills"
+      className="py-20 lg:py-32 bg-black relative overflow-hidden"
+    >
+      {/* Subtle Grid Background */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-5 pointer-events-none"></div>
 
-        {/* Right Glow Capsule - EXTREMELY SUBTLE */}
-        <div className="absolute top-[20%] -right-48 w-[600px] h-[180px] bg-gradient-to-l from-orange-100 via-yellow-200 to-orange-200 opacity-5 blur-[110px] rounded-full rotate-[-30deg] animate-pulse" style={{ animationDuration: '10s', animationDelay: '3s' }}></div>
-
-        {/* Bottom Center Glow Capsule - EXTREMELY SUBTLE */}
-        <div className="absolute bottom-[-80px] left-1/2 transform -translate-x-1/2 w-[500px] h-[150px] bg-gradient-to-r from-amber-200 via-orange-200 to-yellow-200 opacity-5 blur-[95px] rounded-full rotate-[10deg] animate-pulse" style={{ animationDuration: '12s', animationDelay: '1.5s' }}></div>
-      </div>
-
-      {/* Finance-themed floating icons */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Top Right - Certification Progress */}
-        <div className="absolute top-32 right-20 hidden lg:block animate-slide-in-right" style={{animationDelay: '1.5s'}}>
-          <div className="bg-white/90 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-gray-200/50">
-            <PieChart className="w-8 h-8 text-orange-500 animate-spin" style={{animationDuration: '8s'}} />
-          </div>
-        </div>
-
-        {/* Bottom Left - Experience Growth */}
-        <div className="absolute bottom-32 left-20 hidden lg:block animate-fade-in-up" style={{animationDelay: '2s'}}>
-          <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-gray-200/50">
-            <TrendingUp className="w-8 h-8 text-green-500" />
-          </div>
-        </div>
-      </div>
-      
-      <div className="container-custom relative z-20">
-        <div className="text-center mb-8 md:mb-12 animate-fade-in-up">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-navy-900 mb-4 hover:scale-105 transition-transform duration-500">
-            My <span className="gradient-text">Skills</span>
+      <div className="max-w-6xl mx-auto px-8 lg:px-16 relative z-10">
+        {/* Header */}
+        <div className="text-center mb-16 animate-fade-in-up">
+          <h2 className="text-4xl md:text-6xl font-bold text-white font-playfair italic tracking-tight mb-3">
+            Skills
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-navy-600 to-orange-500 mx-auto mb-6 hover:w-32 transition-all duration-500"></div>
-          <p className="text-base md:text-lg text-navy-600 max-w-2xl mx-auto">
-            Technical expertise and professional certifications driving excellence
+          <div className="w-24 h-[2px] bg-teal mx-auto mb-8"></div>
+          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+            Technical expertise and professional certifications driving
+            excellence
           </p>
         </div>
-        
-        <div className="grid lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
-          {/* Technical Skills */}
-          <div className="lg:col-span-2">
-            <Card className="group h-full border-gray-300 hover:border-orange-300 transition-all duration-500 hover:shadow-xl hover:shadow-orange-500/20 animate-fade-in-up bg-white hover:bg-gradient-to-br hover:from-white hover:to-orange-50/20">
-              <CardContent className="p-4 md:p-6 lg:p-8">
-                <h3 className="text-xl md:text-2xl font-bold text-navy-900 mb-4 md:mb-6 group-hover:text-navy-800 transition-colors">
+
+        {/* Technical Skills Section */}
+        <div className="mb-16 animate-fade-in-up">
+          <Card className="bg-black border border-white/10 hover:border-teal/30 transition-all duration-300">
+            <CardContent className="p-8 md:p-12">
+              <div className="flex items-start gap-4 mb-10">
+                <div className="w-10 h-10 border border-teal/30 rounded-full flex items-center justify-center flex-shrink-0 bg-teal/5">
+                  <Monitor className="w-5 h-5 text-teal" />
+                </div>
+                <h3 className="text-xl font-geist-mono text-white">
                   Technical Expertise
                 </h3>
-                
-                <div className="grid md:grid-cols-2 gap-3 md:gap-4 lg:gap-6">
-                  {technicalSkills.map((skill, index) => {
-                    const IconComponent = skill.icon;
-                    return (
-                      <div key={index} className="flex items-center space-x-3 md:space-x-4 p-3 md:p-4 bg-gray-50 rounded-lg hover:shadow-md hover:bg-white hover:scale-105 transition-all duration-300 border border-gray-200 hover:border-orange-200">
-                        <div className="p-2 md:p-3 bg-navy-100 rounded-lg hover:bg-navy-200 transition-colors duration-300 flex-shrink-0">
-                          <IconComponent className="h-5 w-5 md:h-6 md:w-6 text-navy-500 hover:text-navy-600 transition-colors" />
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <div className="font-semibold text-navy-900 hover:text-navy-800 transition-colors text-sm md:text-base truncate">
-                            {skill.name}
-                          </div>
-                          <Badge variant="secondary" className="text-xs mt-1 bg-orange-100 text-orange-700 hover:bg-orange-200 transition-colors">
-                            {skill.category}
-                          </Badge>
-                        </div>
+              </div>
+
+              {/* Technical Skills Grid */}
+              <div className="grid md:grid-cols-3 gap-6 mb-12">
+                {technicalSkills.map((skill, index) => {
+                  const IconComponent = skill.icon;
+                  return (
+                    <div
+                      key={index}
+                      className="flex items-center rounded-lg space-x-4 p-5 border border-white/10 hover:border-teal/30 transition-all duration-300 group"
+                    >
+                      <div className="w-9 h-9 border border-teal/20 rounded-full flex items-center justify-center flex-shrink-0 group-hover:border-teal/40 transition-colors bg-teal/5">
+                        <IconComponent className="w-4 h-4 text-teal" />
                       </div>
-                    );
-                  })}
-                </div>
-                
-                <div className="mt-6 md:mt-8">
-                  <h4 className="text-base md:text-lg font-semibold text-navy-900 mb-3 md:mb-4 group-hover:text-navy-800 transition-colors">
-                    Soft Skills
-                  </h4>
-                  <div className="flex flex-wrap gap-2">
-                    {softSkills.map((skill, index) => (
-                      <Badge 
-                        key={index}
-                        className="bg-gray-200 text-navy-700 hover:bg-orange-200 hover:text-orange-800 hover:scale-105 transition-all duration-300 cursor-default text-xs md:text-sm"
-                      >
-                        {skill}
-                      </Badge>
-                    ))}
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-          
-          {/* Certifications */}
-          <div>
-            <Card className="group h-full border-gray-300 hover:border-orange-300 transition-all duration-500 hover:shadow-xl hover:shadow-orange-500/20 animate-fade-in-up bg-white hover:bg-gradient-to-br hover:from-white hover:to-orange-50/20" style={{ animationDelay: '0.2s' }}>
-              <CardContent className="p-4 md:p-6 lg:p-8">
-                <h3 className="text-xl md:text-2xl font-bold text-navy-900 mb-4 md:mb-6 group-hover:text-navy-800 transition-colors">
-                  Certifications
-                </h3>
-                
-                <div className="space-y-4 md:space-y-6">
-                  {certifications.map((cert, index) => (
-                    <div key={index} className="border-l-4 border-orange-400 pl-3 md:pl-4 py-2 md:py-3 bg-gray-50 rounded-r-lg hover:bg-white hover:shadow-md hover:scale-105 transition-all duration-300">
-                      <div className="flex items-center justify-between mb-2">
-                        <h4 className="font-bold text-navy-900 hover:text-navy-800 transition-colors text-sm md:text-base">
-                          {cert.name}
-                        </h4>
-                        <Badge 
-                          className={`text-xs font-semibold text-white transition-all duration-300 ${
-                            cert.status === 'Certified' || cert.status === 'Completed'
-                              ? 'bg-green-500 hover:bg-green-600 hover:scale-105'
-                              : 'bg-navy-500 hover:bg-navy-600 hover:scale-105'
-                          }`}
+                      <div className="flex-1 min-w-0">
+                        <div className="text-white text-sm font-medium truncate">
+                          {skill.name}
+                        </div>
+                        <Badge
+                          variant="outline"
+                          className="text-xs mt-1.5 bg-black text-teal border-teal/20"
                         >
-                          {cert.status}
+                          {skill.category}
                         </Badge>
                       </div>
-                      <p className="text-xs md:text-sm text-navy-600 mb-1 hover:text-navy-700 transition-colors">
-                        {cert.provider}
-                      </p>
-                      <Badge variant="outline" className="text-xs border-orange-300 text-orange-700 hover:bg-orange-50 transition-colors">
-                        {cert.level}
-                      </Badge>
                     </div>
+                  );
+                })}
+              </div>
+
+              {/* Soft Skills */}
+              <div>
+                <h4 className="text-xs uppercase tracking-wider text-teal mb-5 font-geist-mono">
+                  Soft Skills
+                </h4>
+                <div className="flex flex-wrap gap-3">
+                  {softSkills.map((skill, index) => (
+                    <Badge
+                      key={index}
+                      variant="outline"
+                      className="bg-black text-white border-teal/20 hover:bg-teal/5 transition-colors text-xs py-1.5 px-3"
+                    >
+                      {skill}
+                    </Badge>
                   ))}
                 </div>
-                
-                <div className="mt-6 md:mt-8 p-3 md:p-4 bg-orange-50 rounded-lg border border-orange-200 hover:bg-orange-100 hover:shadow-md transition-all duration-300">
-                  <h4 className="font-semibold text-navy-900 mb-2 text-sm md:text-base">
-                    Currently Pursuing
-                  </h4>
-                  <p className="text-xs md:text-sm text-navy-600">
-                    Working towards CFA Level 1 certification and advancing in ACCA qualification pathway.
-                  </p>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Certifications Timeline */}
+        <div
+          className="mb-12 animate-fade-in-up"
+          style={{ animationDelay: "0.2s" }}
+        >
+          <div className="flex items-center gap-4 mb-8">
+            <div className="w-10 h-10 border border-teal/30 rounded-full flex items-center justify-center flex-shrink-0 bg-teal/5">
+              <Award className="w-5 h-5 text-teal" />
+            </div>
+            <h3 className="text-xl font-geist-mono text-white">
+              Certifications
+            </h3>
+          </div>
+
+          {/* Timeline layout */}
+          <div className="relative">
+            {/* Timeline vertical line */}
+            <div className="absolute left-5 top-0 bottom-0 w-px bg-gradient-to-b from-teal/30 via-teal/20 to-teal/10"></div>
+
+            {/* Certification items */}
+            <div className="space-y-14">
+              {certifications.map((cert, index) => (
+                <div key={index} className="relative pl-16">
+                  {/* Circle on timeline */}
+                  <div className="absolute left-0 top-0 mt-1 w-10 h-10 rounded-full border border-teal/30 flex items-center justify-center bg-black">
+                    <span className="text-teal text-sm font-geist-mono">
+                      {cert.name.charAt(0)}
+                    </span>
+                  </div>
+
+                  {/* Year badge */}
+                  <div className="mb-4">
+                    <Badge
+                      variant="outline"
+                      className="bg-black text-teal border-teal/20 text-xs font-geist-mono"
+                    >
+                      2024
+                    </Badge>
+                  </div>
+
+                  {/* Certification title */}
+                  <div className="flex justify-between items-start mb-2">
+                    <h4 className="text-lg text-white font-geist-mono">
+                      {cert.name}
+                    </h4>
+                    <Badge
+                      variant="outline"
+                      className="bg-black text-teal border-teal/20 text-xs"
+                    >
+                      {cert.status}
+                    </Badge>
+                  </div>
+
+                  {/* Provider */}
+                  <p className="text-white/70 text-sm mb-4">{cert.provider}</p>
+
+                  {/* Details section */}
+                  <div className="border-l border-teal/20 pl-4 py-1">
+                    <div className="mb-3">
+                      <h5 className="text-xs uppercase tracking-wider text-teal mb-2 font-geist-mono">
+                        Level
+                      </h5>
+                      <p className="text-gray-400 text-sm">{cert.level}</p>
+                    </div>
+
+                    {cert.name === "ACCA" && (
+                      <div>
+                        <h5 className="text-xs uppercase tracking-wider text-teal mb-2 font-geist-mono">
+                          Status
+                        </h5>
+                        <p className="text-gray-400 text-sm">
+                          Currently advancing through the Strategic Level papers
+                        </p>
+                      </div>
+                    )}
+                  </div>
                 </div>
-              </CardContent>
-            </Card>
+              ))}
+            </div>
+          </div>
+
+          {/* Currently Pursuing */}
+          <div className="mt-12 p-6 border rounded-lg border-white/10 hover:border-teal/30 transition-all duration-300">
+            <div className="flex items-center gap-3">
+              <div className="relative flex-shrink-0">
+                <span className="absolute inset-0 rounded-full animate-ping bg-teal/40"></span>
+                <span className="relative block w-3 h-3 rounded-full bg-teal"></span>
+              </div>
+              <div className="flex-1 ml-3">
+                <h4 className="text-teal text-xs uppercase tracking-wider font-geist-mono mb-2">
+                  Currently Pursuing
+                </h4>
+                <p className="text-sm text-gray-400 leading-relaxed">
+                  Working towards CFA Level 1 certification and advancing in
+                  ACCA qualification pathway.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
