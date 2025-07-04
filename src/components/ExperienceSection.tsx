@@ -1,8 +1,18 @@
-
-import React from 'react';
-import { Card, CardContent } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Briefcase, Users, DollarSign, Calendar, TrendingUp, BarChart3, PieChart, Building } from 'lucide-react';
+import React from "react";
+import { Badge } from "@/components/ui/badge";
+import {
+  Briefcase,
+  Users,
+  DollarSign,
+  Calendar,
+  ChevronDown,
+} from "lucide-react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const ExperienceSection = () => {
   const experiences = [
@@ -18,9 +28,14 @@ const ExperienceSection = () => {
         "Performing financial planning and analysis for banking operations",
         "Supporting budget preparation and variance analysis",
         "Analyzing financial data to support strategic decision making",
-        "Working with cross-functional teams on financial reporting"
+        "Working with cross-functional teams on financial reporting",
       ],
-      skills: ["Financial Analysis", "Excel", "Financial Planning", "Banking Operations"]
+      skills: [
+        "Financial Analysis",
+        "Excel",
+        "Financial Planning",
+        "Banking Operations",
+      ],
     },
     {
       title: "Student Placement Coordinator",
@@ -32,9 +47,14 @@ const ExperienceSection = () => {
         "Represented college at NDTV Profit & ASSOCHAM MSME Conclave 2025",
         "Coordinated placement activities for numerous students",
         "Built relationships with 15+ corporate partners",
-        "Organized industry interaction sessions and workshops"
+        "Organized industry interaction sessions and workshops",
       ],
-      skills: ["Corporate Relations", "Event Management", "Communication", "Leadership"]
+      skills: [
+        "Corporate Relations",
+        "Event Management",
+        "Communication",
+        "Leadership",
+      ],
     },
     {
       title: "Senior Member",
@@ -46,140 +66,152 @@ const ExperienceSection = () => {
         "Led stock market simulation with 150+ participants",
         "Raised ₹15,000 through strategic sponsorship deals",
         "Coordinated team of 12 volunteers for finance events",
-        "Managed budget and financial planning for the fest"
+        "Managed budget and financial planning for the fest",
       ],
-      skills: ["Team Leadership", "Budget Management", "Sponsorship", "Finance Events"]
-    }
+      skills: [
+        "Team Leadership",
+        "Budget Management",
+        "Sponsorship",
+        "Finance Events",
+      ],
+    },
   ];
 
   return (
-    <section id="experience" className="section-padding bg-white relative overflow-hidden">
-      {/* ✨ Unified Animated Gradient Capsules - EXTREMELY SUBTLE VERSION */}
-      <div className="absolute inset-0 z-10 overflow-hidden pointer-events-none">
-        {/* Left Glow Capsule - EXTREMELY SUBTLE */}
-        <div className="absolute -top-32 -left-48 w-[700px] h-[200px] bg-gradient-to-r from-orange-200 via-amber-200 to-orange-300 opacity-5 blur-[100px] rounded-full rotate-[20deg] animate-pulse" style={{ animationDuration: '8s' }}></div>
+    <section
+      id="experience"
+      className="py-20 lg:py-32 bg-black relative overflow-hidden"
+    >
+      {/* Subtle Grid Background */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-5 pointer-events-none"></div>
 
-        {/* Right Glow Capsule - EXTREMELY SUBTLE */}
-        <div className="absolute top-[20%] -right-48 w-[600px] h-[180px] bg-gradient-to-l from-orange-100 via-yellow-200 to-orange-200 opacity-5 blur-[110px] rounded-full rotate-[-30deg] animate-pulse" style={{ animationDuration: '10s', animationDelay: '3s' }}></div>
-
-        {/* Bottom Center Glow Capsule - EXTREMELY SUBTLE */}
-        <div className="absolute bottom-[-80px] left-1/2 transform -translate-x-1/2 w-[500px] h-[150px] bg-gradient-to-r from-amber-200 via-orange-200 to-yellow-200 opacity-5 blur-[95px] rounded-full rotate-[10deg] animate-pulse" style={{ animationDuration: '12s', animationDelay: '1.5s' }}></div>
-      </div>
-
-      {/* Finance-themed floating icons */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Top Right - Performance Metrics */}
-        <div className="absolute top-32 right-20 hidden lg:block animate-slide-in-right" style={{animationDelay: '1.5s'}}>
-          <div className="bg-white/90 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-gray-200/50">
-            <TrendingUp className="w-8 h-8 text-green-500 animate-bounce" style={{animationDuration: '3s'}} />
-          </div>
-        </div>
-
-        {/* Bottom Left - Team Leadership */}
-        <div className="absolute bottom-32 left-20 hidden lg:block animate-fade-in-up" style={{animationDelay: '2s'}}>
-          <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-lg border border-gray-200/50">
-            <Users className="w-8 h-8 text-blue-500" />
-          </div>
-        </div>
-      </div>
-      
-      <div className="container-custom relative z-20">
-        <div className="text-center mb-8 md:mb-12 animate-fade-in-up">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-navy-900 mb-4 hover:scale-105 transition-transform duration-500">
-            My <span className="gradient-text">Experience</span>
+      <div className="max-w-6xl mx-auto px-8 lg:px-16 relative z-10">
+        {/* Header */}
+        <div className="text-center mb-16 animate-fade-in-up">
+          <h2 className="text-4xl md:text-6xl font-bold text-white font-playfair italic tracking-tight mb-3">
+            Experience
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-navy-600 to-orange-500 mx-auto mb-6 hover:w-32 transition-all duration-500"></div>
-          <p className="text-base md:text-lg text-navy-600 max-w-2xl mx-auto">
-            Building leadership skills through meaningful roles and impactful contributions
+          <div className="w-24 h-[2px] bg-teal mx-auto mb-8"></div>
+          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+            Building leadership skills through meaningful roles and impactful
+            contributions
           </p>
         </div>
-        
-        <div className="space-y-6 md:space-y-8">
-          {experiences.map((exp, index) => {
-            const IconComponent = exp.icon;
-            return (
-              <Card 
-                key={index}
-                className="group hover-lift border-gray-300 hover:border-orange-300 transition-all duration-500 hover:shadow-xl hover:shadow-orange-500/20 animate-fade-in-up bg-white hover:bg-gradient-to-br hover:from-white hover:to-orange-50/20"
-                style={{ animationDelay: `${index * 0.3}s` }}
-              >
-                <CardContent className="p-4 md:p-6 lg:p-8">
-                  <div className="grid lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
-                    <div className="lg:col-span-1">
-                      <div className="flex items-center mb-4">
-                        <div className="p-2 md:p-3 bg-navy-100 rounded-lg mr-3 md:mr-4 group-hover:bg-navy-200 transition-colors duration-300">
-                          <IconComponent className="h-5 w-5 md:h-6 md:w-6 text-navy-600 group-hover:text-navy-700 transition-colors" />
-                        </div>
-                        <Badge className="bg-orange-500 hover:bg-orange-600 group-hover:scale-105 transition-transform duration-300 text-xs md:text-sm">
-                          {exp.type}
-                        </Badge>
+
+        {/* Timeline Experience Layout */}
+        <div className="relative">
+          {/* Timeline line */}
+          <div className="absolute left-0 md:left-[2.25rem] top-0 bottom-0 w-px bg-gradient-to-b from-teal/30 via-teal/20 to-teal/10"></div>
+
+          {/* Experience Items */}
+          <div className="space-y-16 md:space-y-20 ml-0 md:ml-12">
+            {experiences.map((exp, index) => {
+              const IconComponent = exp.icon;
+              return (
+                <div
+                  key={index}
+                  className="relative animate-fade-in-up pl-8 md:pl-10"
+                  style={{ animationDelay: `${index * 0.2}s` }}
+                >
+                  {/* Circle on timeline */}
+                  <div className="absolute left-0 md:-left-12 top-0 w-5 h-5 rounded-full border border-teal/30 bg-black flex items-center justify-center">
+                    <div className="w-2 h-2 bg-teal rounded-full"></div>
+                  </div>
+
+                  {/* Year Badge */}
+                  <div className="mb-5">
+                    <Badge
+                      variant="outline"
+                      className="bg-black text-teal border-teal/20 text-xs font-geist-mono"
+                    >
+                      {exp.period.split(" ")[0]} {/* Extract the year */}
+                    </Badge>
+                  </div>
+
+                  {/* Icon and Title section */}
+                  <div className="flex flex-col md:flex-row md:items-center gap-5 mb-4">
+                    {exp.logo ? (
+                      <img
+                        src={exp.logo}
+                        alt={`${exp.organization} logo`}
+                        className="w-12 h-12 object-cover rounded-full border border-teal/20"
+                      />
+                    ) : (
+                      <div className="w-12 h-12 rounded-full border border-teal/30 flex items-center justify-center bg-teal/5">
+                        <IconComponent className="w-5 h-5 text-teal" />
                       </div>
-                      
-                      {/* Company Logo */}
-                      {exp.logo && (
-                        <div className="mb-4">
-                          <img 
-                            src={exp.logo} 
-                            alt={`${exp.organization} logo`}
-                            className="w-16 h-16 md:w-20 md:h-20 object-contain rounded-lg border border-gray-200 bg-white p-2"
-                          />
-                        </div>
-                      )}
-                      
-                      <h3 className="text-xl md:text-2xl font-bold text-navy-800 mb-2 group-hover:text-navy-900 transition-colors">
+                    )}
+
+                    <div>
+                      <h3 className="text-xl font-medium text-white font-geist-mono">
                         {exp.title}
                       </h3>
-                      
-                      <p className="text-base md:text-lg text-orange-600 font-semibold mb-3 group-hover:text-orange-700 transition-colors">
+                      <p className="text-white/70 text-sm">
                         {exp.organization}
                       </p>
-                      
-                      <div className="flex items-center text-navy-500 mb-3 group-hover:text-navy-600 transition-colors">
-                        <Calendar className="h-4 w-4 mr-2" />
-                        <span className="text-sm md:text-base">{exp.period}</span>
-                      </div>
-                      
-                      {/* Location */}
-                      {exp.location && (
-                        <p className="text-sm text-navy-500 mb-4 group-hover:text-navy-600 transition-colors">
-                          📍 {exp.location}
-                        </p>
-                      )}
-                      
-                      <div className="flex flex-wrap gap-2">
-                        {exp.skills.map((skill, skillIndex) => (
-                          <Badge 
-                            key={skillIndex}
-                            variant="secondary"
-                            className="text-xs bg-navy-100 text-navy-700 hover:bg-navy-200 transition-colors"
-                          >
-                            {skill}
-                          </Badge>
-                        ))}
-                      </div>
                     </div>
-                    
-                    <div className="lg:col-span-2">
-                      <h4 className="text-base md:text-lg font-semibold text-navy-700 mb-3 md:mb-4 group-hover:text-navy-800 transition-colors">
-                        Key Achievements & Responsibilities:
-                      </h4>
-                      
-                      <div className="grid md:grid-cols-2 gap-3 md:gap-4">
-                        {exp.achievements.map((achievement, achIndex) => (
-                          <div key={achIndex} className="flex items-start">
-                            <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 mr-3 flex-shrink-0 group-hover:bg-orange-600 transition-colors"></div>
-                            <p className="text-navy-600 leading-relaxed text-sm md:text-base group-hover:text-navy-700 transition-colors">
-                              {achievement}
-                            </p>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
+
+                    <Badge
+                      variant="outline"
+                      className="bg-black text-teal border-teal/20 md:ml-auto text-xs self-start md:self-center"
+                    >
+                      {exp.type}
+                    </Badge>
                   </div>
-                </CardContent>
-              </Card>
-            );
-          })}
+
+                  {/* Period and Location */}
+                  <div className="mb-5 text-sm text-gray-400 flex flex-wrap gap-4 items-center">
+                    <div className="flex items-center">
+                      <Calendar className="h-3.5 w-3.5 mr-1.5 text-teal" />
+                      <span>{exp.period}</span>
+                    </div>
+                    {exp.location && <span>📍 {exp.location}</span>}
+                  </div>
+
+                  {/* Skills */}
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {exp.skills.map((skill, skillIndex) => (
+                      <Badge
+                        key={skillIndex}
+                        variant="outline"
+                        className="bg-black text-white border-teal/20 hover:bg-teal/5 text-xs"
+                      >
+                        {skill}
+                      </Badge>
+                    ))}
+                  </div>
+
+                  {/* Achievements Accordion */}
+                  <Accordion
+                    type="single"
+                    collapsible
+                    className="border-t border-teal/10 pt-4"
+                  >
+                    <AccordionItem
+                      value={`exp-${index}`}
+                      className="border-b-0"
+                    >
+                      <AccordionTrigger className="hover:no-underline py-2 text-sm font-geist-mono uppercase tracking-wider text-teal">
+                        Key Achievements & Responsibilities
+                      </AccordionTrigger>
+                      <AccordionContent className="pb-6">
+                        <div className="space-y-3 border-l border-teal/20 pl-4 mt-2">
+                          {exp.achievements.map((achievement, achIndex) => (
+                            <div key={achIndex} className="flex items-start">
+                              <div className="w-1 h-1 bg-teal mt-2 mr-3 flex-shrink-0"></div>
+                              <p className="text-gray-400 text-sm leading-relaxed">
+                                {achievement}
+                              </p>
+                            </div>
+                          ))}
+                        </div>
+                      </AccordionContent>
+                    </AccordionItem>
+                  </Accordion>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>
