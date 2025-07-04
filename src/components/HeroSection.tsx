@@ -106,7 +106,7 @@ const HeroSection = () => {
       </div>
 
       {/* Main Content - Clean and Minimal with Enhanced Animations */}
-      <div className="relative z-20 max-w-5xl mx-auto px-8 lg:px-12 mt-40 md:mt-44 lg:mt-24 pt-16">
+      <div className="relative z-20 max-w-5xl mx-auto px-8 lg:px-12 mt-20 md:mt-44 lg:mt-20 pt-16">
         <div className="space-y-10">
           {/* Name with character-by-character animation */}
           <div
@@ -156,7 +156,7 @@ const HeroSection = () => {
 
           {/* Title & Description with enhanced fade-in animations */}
           <div
-            className={`space-y-6 transition-all duration-1000 delay-300 text-center ${
+            className={`space-y-4 transition-all duration-1000 delay-300 text-center ${
               isLoaded
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-10"
@@ -184,7 +184,7 @@ const HeroSection = () => {
 
           {/* CTA Buttons with hover effects */}
           <div
-            className={`flex flex-col sm:flex-row items-center justify-center w-full gap-4 pt-8 transition-all duration-1000 delay-500 ${
+            className={`flex flex-col sm:flex-row items-center justify-center w-full gap-4 pb-6 mb-8 transition-all duration-1000 delay-500 ${
               isLoaded
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-10"

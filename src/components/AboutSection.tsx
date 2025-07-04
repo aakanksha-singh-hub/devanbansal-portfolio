@@ -5,7 +5,7 @@ const AboutSection = () => {
   return (
     <section
       id="about"
-      className="py-16 lg:py-24 bg-black relative overflow-hidden"
+      className="pt-16 lg:pt-24 bg-black relative overflow-hidden"
     >
       {/* Simple Background */}
       <div className="absolute inset-0 bg-black"></div>
