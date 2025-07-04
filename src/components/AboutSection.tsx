@@ -5,7 +5,7 @@ const AboutSection = () => {
   return (
     <section
       id="about"
-      className="py-5 lg:py-10 bg-black relative overflow-hidden"
+      className="py-16 lg:py-24 bg-black relative overflow-hidden"
     >
       {/* Simple Background */}
       <div className="absolute inset-0 bg-black"></div>
@@ -13,42 +13,42 @@ const AboutSection = () => {
       {/* Subtle Grid */}
       <div className="absolute inset-0 bg-grid-pattern opacity-[0.02]"></div>
 
-      <div className="max-w-5xl mx-auto px-12 lg:px-20 relative z-10">
+      <div className="max-w-5xl mx-auto px-6 md:px-12 lg:px-20 relative z-10">
         {/* Header */}
-        <div className="mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold text-white font-geist-mono tracking-tight">
+        <div className="mb-12 md:mb-16 text-center">
+          <h2 className="text-4xl md:text-6xl font-bold text-white font-playfair italic tracking-tight">
             About
           </h2>
-          <div className="w-12 h-[1px] bg-gray-500 mt-4"></div>
+          <div className="w-16 h-[2px] bg-teal mt-4 mx-auto"></div>
         </div>
 
-        <div className="max-w-3xl">
-          <p className="text-base text-gray-300 leading-relaxed">
+        <div className="max-w-3xl space-y-6">
+          <p className="text-base md:text-lg text-gray-300 leading-relaxed">
             I'm a passionate Finance student at NMIMS Mumbai, currently pursuing
             my ACCA qualification. My journey in finance has been driven by a
             deep fascination with numbers and their power to tell stories, drive
             decisions, and create value.
           </p>
 
-          <p className="text-base text-gray-300 leading-relaxed">
+          <p className="text-base md:text-lg text-gray-300 leading-relaxed">
             With a strong analytical mindset and strategic thinking approach, I
             excel at breaking down complex financial problems and developing
             innovative solutions. My experience spans across financial analysis,
             market research, and data-driven decision making.
           </p>
 
-          <div className="flex gap-12 pt-6">
+          <div className="flex gap-12 pt-8">
             <div>
-              <div className="text-gray-200 font-geist-mono font-medium text-xl">
+              <div className="text-teal font-geist-mono font-medium text-2xl">
                 3+
               </div>
-              <div className="text-gray-400 text-sm mt-1">Years Experience</div>
+              <div className="text-gray-400 text-sm mt-2">Years Experience</div>
             </div>
             <div>
-              <div className="text-gray-200 font-geist-mono font-medium text-xl">
+              <div className="text-teal font-geist-mono font-medium text-2xl">
                 15+
               </div>
-              <div className="text-gray-400 text-sm mt-1">
+              <div className="text-gray-400 text-sm mt-2">
                 Projects Completed
               </div>
             </div>
