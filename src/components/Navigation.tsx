@@ -64,6 +64,15 @@ const Navigation = () => {
                 {item.label}
               </button>
             ))}
+            <a
+              href="https://www.linkedin.com/in/devanbansal/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-teal hover:text-teal-600 transition-all duration-200 px-4 py-2"
+              aria-label="Visit LinkedIn profile"
+            >
+              <Linkedin className="h-5 w-5" />
+            </a>
           </div>
 
           {/* Action Buttons */}
@@ -108,11 +117,22 @@ const Navigation = () => {
                 </button>
               ))}
 
-              <div className="pt-3 border-t border-teal/20 space-y-2 mt-3">
+              <div className="pt-3 border-t border-teal/20 mt-3">
+                <a
+                  href="https://www.linkedin.com/in/devanbansal/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full text-left py-3 px-4 text-gray-300 hover:text-white hover:bg-teal/20 transition-all duration-200 font-medium rounded-lg border border-transparent hover:border-teal/30"
+                >
+                  <div className="flex items-center">
+                    <Linkedin className="h-4 w-4 mr-2 text-teal" />
+                    LinkedIn
+                  </div>
+                </a>
                 <a
                   href="/Devan Bansal CV.pdf"
                   download="Devan_Bansal_CV.pdf"
-                  className="w-full inline-flex items-center justify-center bg-teal hover:bg-teal-600 text-white py-3 px-4 rounded-lg transition-all duration-200 font-medium border border-teal/30"
+                  className="mt-2 w-full inline-flex items-center justify-center bg-teal hover:bg-teal-600 text-white py-3 px-4 rounded-lg transition-all duration-200 font-medium border border-teal/30"
                 >
                   <Download className="mr-2 h-4 w-4" />
                   Resume

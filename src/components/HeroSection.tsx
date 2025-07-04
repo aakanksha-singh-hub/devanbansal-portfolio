@@ -50,64 +50,9 @@ const HeroSection = () => {
         }}
       ></div>
 
-      {/* Subtle Floating Shapes */}
-      <div className="absolute inset-0 overflow-hidden">
-        {/* Circle */}
-        <div
-          className="absolute w-[300px] h-[300px] rounded-full border border-teal opacity-10"
-          style={{
-            top: "15%",
-            left: "8%",
-            transform: `translate(${mousePosition.x * 30}px, ${
-              mousePosition.y * 30
-            }px)`,
-            transition: "transform 0.8s cubic-bezier(0.22, 1, 0.36, 1)",
-          }}
-        ></div>
-
-        {/* Square */}
-        <div
-          className="absolute w-[200px] h-[200px] border border-gray-800 opacity-10 rotate-45"
-          style={{
-            bottom: "12%",
-            right: "8%",
-            transform: `translate(${mousePosition.x * -40}px, ${
-              mousePosition.y * -40
-            }px)`,
-            transition: "transform 1s cubic-bezier(0.22, 1, 0.36, 1)",
-          }}
-        ></div>
-
-        {/* Horizontal Line */}
-        <div
-          className="absolute h-[1px] w-[150px] bg-teal opacity-20"
-          style={{
-            top: "35%",
-            right: "15%",
-            transform: `scaleX(${0.5 + mousePosition.y * 0.5}) rotate(${
-              mousePosition.x * 5
-            }deg)`,
-            transition: "transform 1.2s cubic-bezier(0.22, 1, 0.36, 1)",
-          }}
-        ></div>
-
-        {/* Vertical Line */}
-        <div
-          className="absolute w-[1px] h-[100px] bg-gray-700 opacity-20"
-          style={{
-            bottom: "25%",
-            left: "20%",
-            transform: `scaleY(${0.5 + mousePosition.x * 0.5}) rotate(${
-              mousePosition.y * 5
-            }deg)`,
-            transition: "transform 1.2s cubic-bezier(0.22, 1, 0.36, 1)",
-          }}
-        ></div>
-      </div>
-
       {/* Main Content - Clean and Minimal with Enhanced Animations */}
-      <div className="relative z-20 max-w-5xl mx-auto px-8 lg:px-12 mt-20 md:mt-44 lg:mt-20 pt-16">
-        <div className="space-y-10">
+      <div className="relative z-20 max-w-5xl mx-auto px-4 sm:px-8 lg:px-12 mt-28 md:mt-44 lg:mt-20 pt-8 sm:pt-16">
+        <div className="space-y-8 md:space-y-10">
           {/* Name with character-by-character animation */}
           <div
             className={`transition-all duration-1000 text-center ${
@@ -116,7 +61,7 @@ const HeroSection = () => {
                 : "opacity-0 translate-y-10"
             }`}
           >
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tighter relative">
+            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tighter relative">
               <div className="text-white inline-block relative">
                 {"Devan".split("").map((char, index) => (
                   <span
@@ -156,14 +101,14 @@ const HeroSection = () => {
 
           {/* Title & Description with enhanced fade-in animations */}
           <div
-            className={`space-y-4 transition-all duration-1000 delay-300 text-center ${
+            className={`space-y-3 sm:space-y-4 transition-all duration-1000 delay-300 text-center ${
               isLoaded
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-10"
             }`}
           >
             <div className="space-y-1 flex flex-col items-center">
-              <p className="text-lg sm:text-xl md:text-2xl text-white font-geist-mono tracking-tight">
+              <p className="text-base sm:text-lg md:text-2xl text-white font-geist-mono tracking-tight">
                 Finance Student / ACCA Candidate
               </p>
               <div
@@ -184,7 +129,7 @@ const HeroSection = () => {
 
           {/* CTA Buttons with hover effects */}
           <div
-            className={`flex flex-col sm:flex-row items-center justify-center w-full gap-4 pb-6 mb-8 transition-all duration-1000 delay-500 ${
+            className={`flex flex-col sm:flex-row items-center justify-center w-full gap-3 sm:gap-4 pb-4 sm:pb-6 mb-8 transition-all duration-1000 delay-500 ${
               isLoaded
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-10"
@@ -220,7 +165,7 @@ const HeroSection = () => {
 
       {/* Marquee Banner at bottom */}
       <div
-        className={`w-full border-t border-b border-teal/40 relative z-20 mt-auto mb-12 transition-opacity duration-1000 ${
+        className={`w-full border-t border-b border-teal/40 relative z-20 mt-auto mb-6 sm:mb-12 transition-opacity duration-1000 ${
           isLoaded ? "opacity-100" : "opacity-0"
         }`}
       >
@@ -231,15 +176,15 @@ const HeroSection = () => {
                 key={i}
                 className="flex items-center mx-4 font-geist-mono text-base md:text-lg"
               >
-                <span className="mx-4 text-teal uppercase tracking-wider font-medium">
+                <span className="mx-2 sm:mx-4 text-teal uppercase tracking-wider font-medium text-sm sm:text-base">
                   Analytical Mind
                 </span>
                 <span className="text-white/70">•</span>
-                <span className="mx-4 text-teal uppercase tracking-wider font-medium">
+                <span className="mx-2 sm:mx-4 text-teal uppercase tracking-wider font-medium text-sm sm:text-base">
                   Strategic Thinker
                 </span>
                 <span className="text-white/70">•</span>
-                <span className="mx-4 text-teal uppercase tracking-wider font-medium">
+                <span className="mx-2 sm:mx-4 text-teal uppercase tracking-wider font-medium text-sm sm:text-base">
                   Problem Solver
                 </span>
                 <span className="text-white/70">•</span>
